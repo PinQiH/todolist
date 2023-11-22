@@ -1,0 +1,22 @@
+<% layout('layout') %>
+    <div id="myDIV" class="header">
+        <h2>My To Do List</h2>
+        <form action="/create-item" method="POST">
+            <input type="text" id="myInput" name="item" placeholder="Title...">
+            <button class="addBtn">Add</button>
+        </form>
+    </div>
+
+    <ul id="myUL">
+        <% for(list in todolist){ %>
+            <form>
+                <li>
+                    <span class="item-text"><%- todolist[list].item %></span>
+                    <div class="button-container">
+                        <button data-id="<%- list %>" class="edit-me btn btn-secondary btn-sm mr-1">Edit</button>
+                        <button data-id="<%- list %>" class="delete-me btn btn-danger btn-sm">Delete</button>
+                    </div>
+                </li>
+            </form>
+            <% } %>
+    </ul>
