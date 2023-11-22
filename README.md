@@ -1,1 +1,4 @@
 # todolist
+
+npminstall
+serviceAccountKey.json
